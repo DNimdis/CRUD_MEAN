@@ -1,0 +1,27 @@
+
+<div class="container" *ngIf = " !products">
+  <h3 > No se tienen resultados</h3>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let product of products">
+        <div class="card" >            
+            <div class="float-left ">
+                <h5><span class="badge badge-danger">$ {{ product.price }}</span></h5>
+              
+            </div>
+            <img class="card-img-top" src="{{src + product.image_product}}" alt="Card image cap" width=" 20%" height="30%">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">{{ product.description}}</p>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+    
+<style>
+  .card{
+    margin-bottom: 2em !important;
+  }
+</style>
